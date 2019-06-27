@@ -22,10 +22,11 @@ body
 		width: 100vw
 		height: 100vh
 		animation: bg 1.5s
-		opacity: 0.5
+		opacity: 1
 		@keyframes bg 
 			from
 				opacity: 0
+
 
 ul
 	margin: 0
@@ -127,10 +128,11 @@ main
 	overflow: hidden
 	display: block
 	margin-top: 10%
-	margin-bottom: 100px
 	min-height: calc(100vh - 168px - 190px - 245px)
+	margin-bottom: 50px
 	+media($bp-tablet)
 		margin-top: 4%
+		margin-bottom: 100px
 	+media($bp-desktop)
 		margin-top: 90px
 	&.collapse

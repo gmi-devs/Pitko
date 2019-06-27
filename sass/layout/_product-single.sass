@@ -52,11 +52,12 @@
 					height: 40px
 
 	.product-container
+		padding-bottom: 20px
 		+clearfix()
 		.product
 			width: calc(100% / 4)
 			float: left
-			padding: 0 3%
+			padding: 0 5%
 
 	+media($bp-mobile-xl)
 		.h3
@@ -64,10 +65,10 @@
 			margin-bottom: 40px
 		.product-container
 			.product
-				padding: 0 5%
+				padding: 0 6%
 				transition: .4s transform
 				&:hover
-					transform: scale(1.14)
+					transform: scale(1.1)
 
 	+media($bp-mobile-xxl)
 		.headline
@@ -110,6 +111,7 @@
 			> .headline
 				display: none
 		.img-container
+			margin-top: 90px
 			img
 				width: auto
 				max-width: 100%
@@ -120,6 +122,8 @@
 				display: block
 				+span-columns(12)
 				+shift(0)
+			p
+				margin-bottom: 30px
 
 			
 				

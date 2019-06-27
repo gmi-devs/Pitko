@@ -301,9 +301,10 @@ $(document).ready(function(){
 	module.navigation.navigationInit();
 	module.accordion();
 	module.cookie();
-	if($(".slider").length > 0){
-		module.slider();
-	}
 });
 
-
+window.onload = function(){
+		if($(".slider").length > 0){
+		module.slider();
+	}
+}
