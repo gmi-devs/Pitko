@@ -3,7 +3,7 @@
 <footer>
 	<div class="footer-group">
 		<div class="logo-footer">
-			<a href="/" class="logo"><img src="<?php echo get_template_directory_uri(); ?>/img/logo-footer.png" alt="logo-footer"></a>
+			<a href="/" class="logo"><img src="<?php echo get_template_directory_uri(); ?>/img/logo-footer.svg" alt="logo-footer"></a>
 		</div>
 
 		<?php wp_nav_menu(array(
