@@ -1,0 +1,22 @@
+@mixin aspect-ratio($width, $height) 
+    position: relative
+
+    &:before 
+        display: block
+        content: ""
+        width: 100%
+        padding-top: ($height / $width) * 100%
+    
+
+@mixin clearfix 
+    &:after 
+        clear: both
+        content: ""
+        display: block
+
+@mixin omega-reset($nth) 
+    &:nth-child(#{$nth}) 
+        margin-right: flex-gutter()
+        
+    &:nth-child(#{$nth}+1) 
+        clear: none 

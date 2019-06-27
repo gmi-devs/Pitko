@@ -1,0 +1,38 @@
+.pagination
+	display: flex
+	justify-content: center
+	flex-wrap: wrap
+	.page-numbers
+		font-family: $font-rale-regular
+		font-size: 16px
+		border: 1px solid $color-grey
+		color: #fff
+		width: 36px
+		height: 36px
+		border-radius: 5px
+		display: inline-flex
+		align-items: center
+		justify-content: center
+		margin: 5px
+		&.current
+			background-color: $color-yellow
+			border-color: $color-yellow
+		&.dots
+			border: none
+			width: auto
+			align-items: flex-end
+			font-size: 20px
+		&.prev
+			background-image: url(img/arrow-white.png)
+			background-position: center
+			background-size: 50%
+			background-repeat: no-repeat
+			&:hover
+				background-color: $color-yellow
+				border-color: $color-yellow
+		&.next
+			@extend .prev
+			transform: scaleX(-1)
+
+		&:hover:not(.current)
+			color: $color-yellow

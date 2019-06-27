@@ -1,0 +1,64 @@
+footer
+	background-color: #000
+	.footer-group
+		padding: 30px 15px
+		padding-bottom: 0
+		border-bottom: 1px solid $color-grey
+		border-top: 1px solid $color-grey
+	.logo-footer
+		display: block
+		text-align: center
+		margin-bottom: 30px
+		.logo
+			display: inline-block
+	.menu-footer-container
+		margin-bottom: 30px
+	.menu
+		display: flex
+		flex-direction: column
+		align-items: center
+		a
+			padding: 5px
+			&:hover
+				color: $color-yellow
+		li:not(:last-child)
+			margin-bottom: 15px
+	.footer-icons
+		display: flex
+		justify-content: center
+		align-items: center
+		margin-bottom: 30px
+		li
+			a
+				display: inline-block
+				padding: 0 10px
+				&:hover
+					path
+						fill: $color-yellow
+	.cpy
+		padding: 20px 0
+		display: flex
+		justify-content: center
+	.esif
+		text-align: center
+		padding-bottom: 20px
+		img
+			width: auto
+			max-width: 100%
+
+	+media($bp-mobile-xl)
+		.menu
+			flex-direction: row
+			flex-wrap: wrap
+			justify-content: center
+			align-items: normal
+			li
+				margin: 3px
+			a
+				padding: 10px
+	+media($bp-tablet)
+		.menu
+			li
+				margin: 0
+				&:not(:last-child)
+					margin: 0

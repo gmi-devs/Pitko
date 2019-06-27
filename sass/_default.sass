@@ -1,0 +1,163 @@
+*
+	box-sizing: border-box
+body
+	margin: 0
+	background-color: #000
+	color: #fff
+	font-size: 16px
+	font-family: $font-rale-regular
+	padding-top: 70px
+	+media($bp-desktop)
+		padding-top: 0
+	.bg
+		background-image: url(img/bg.jpg)
+		background-attachment: fixed
+		background-position: center
+		background-size: cover
+		opacity: 1
+		position: fixed
+		z-index: -1
+		top: 0
+		left: 0
+		width: 100vw
+		height: 100vh
+		animation: bg 1.5s
+		opacity: 0.5
+		@keyframes bg 
+			from
+				opacity: 0
+
+ul
+	margin: 0
+	padding: 0
+	list-style: none
+
+a
+	text-decoration: none
+	color: #fff
+	&.link
+		color: $color-yellow
+
+img
+	vertical-align: top
+	width: 100%
+	height: auto
+
+.wp-block-image
+	img
+		border-radius: 5px
+	figcaption
+		color: #fff
+
+.blocks-gallery-item
+	img
+		border-radius: 5px
+svg
+	vertical-align: top
+
+button
+	border: none
+	cursor: pointer
+	padding: 0
+	background-color: transparent
+	outline: none
+
+input
+	border: none
+	font-family: $font-rale-regular
+	padding: 0
+	margin: 0
+	outline: none
+
+textarea
+	font-family: $font-rale-regular
+	outline: none
+	border: 0
+	min-width: 100%
+	max-width: 100%
+
+
+h1, h2, h3, h4, h5, h6
+	margin: 0
+	font-weight: normal
+	font-family: $font-rale-bold
+	line-height: 1.3
+
+h1
+	text-align: center
+	font-size: 10vw
+	margin-bottom: 6%
+	+media($bp-mobile-xl)
+		font-size: 46px
+		margin-bottom: 34px
+	+media($bp-desktop)
+		font-size: 64px
+
+h2, .h2
+
+	font-size: 7vw
+	margin-bottom: 5%
+	+media($bp-mobile-xl)
+		margin-bottom: 5%
+		font-size: 32px
+	+media($bp-laptop)
+		font-size: 38px
+	+media($bp-desktop)
+		font-size: 46px
+		margin-bottom: 34px
+	&.subtitle
+		text-align: center
+		font-size: 22px
+		font-family: $font-rale-regular
+
+h3, .h3
+	margin-bottom: 10px
+	font-size: 5vw
+	+media($bp-mobile-xl)
+		font-size: 23px
+
+p 
+	margin: 0
+	margin-bottom: 4%
+	line-height: 1.5
+	+media($bp-desktop)
+		margin-bottom: 30px
+
+main
+	overflow: hidden
+	display: block
+	margin-top: 10%
+	margin-bottom: 100px
+	min-height: calc(100vh - 168px - 190px - 245px)
+	+media($bp-tablet)
+		margin-top: 4%
+	+media($bp-desktop)
+		margin-top: 90px
+	&.collapse
+		margin-bottom: 0
+
+.container-480
+	+clearfix()
+	max-width: 480px
+	margin: 0 auto
+		
+.container-680
+	+clearfix()
+	max-width: 680px
+	margin: 0 auto
+
+.container-920
+	+clearfix()
+	max-width: 920px
+	margin: 0 auto
+
+.container-1400
+	+clearfix()
+	max-width: 1400px
+	padding: 0 15px
+	margin: 0 auto
+	&.no-pad
+		padding: 0
+
+.center 
+	text-align: center

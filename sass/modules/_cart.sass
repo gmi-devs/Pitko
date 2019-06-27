@@ -1,0 +1,139 @@
+#cart-overview
+	position: absolute
+	z-index: 1
+	top: 100%
+	right: 0
+	width: 100%
+	background-color: #fff
+	box-shadow: 0 2px 30px 0 #000000, 0 15px 20px 0 rgba(72,72,74,0.2)
+	border-top: 4px solid $color-yellow
+	border-radius: 0 0 5px 5px
+	&:before
+		content: ''
+		position: absolute
+		right: 15px
+		top: -24px
+		border-top: 11px solid transparent
+		border-right: 11px solid transparent
+		border-left: 11px solid transparent
+		border-bottom: 11px solid $color-yellow
+	display: none
+	.cart-overview
+		padding: 15px
+		max-height: calc(100vh - 70px)
+		overflow-y: auto
+	h2
+		color: #000
+		margin-bottom: 10px
+		font-size: 18px
+	p
+		color: #000
+		text-align: center
+		font-family: $font-rale-bold
+	.product
+		border-bottom: 1px solid $color-grey_darth	
+		display: flex
+		padding: 10px 0
+		align-items: center
+		justify-content: space-between
+		img
+			width: auto
+			height: 100px
+		.controls
+			display: flex	
+			span
+				background-color: $color-grey_darth
+				border-radius: 5px
+				color: #000
+				font-size: 24px
+				font-family: $font-rale-bold
+				width: 24px
+				height: 24px
+				display: flex
+				align-items: center
+				justify-content: center
+				user-select: none
+				cursor: pointer
+				&:hover
+					&:not(:nth-child(2))
+						background-color: $color-yellow
+			span:nth-child(2)
+				background-color: transparent
+				font-size: 16px
+				width: auto
+				height: auto
+				min-width: 40px
+		.packing
+			color: #000
+		.price
+			color: #000
+		.remove
+			color: $color-yellow
+
+	.empty-cart
+		padding: 50px 15px
+		div
+			text-align: center
+		a 
+			display: inline-block
+		.button
+			display: inline-block
+			margin: 0 auto
+	.cart-summary
+		margin-top: 10px
+		display: flex
+		flex-direction: column
+		text-align: right
+		span
+			color: #000
+			&:first-child
+				margin-right: 40px
+		.product-sum
+			margin-bottom: 10px
+		.delivery
+			margin-bottom: 10px
+		.total
+			margin-bottom: 30px
+			span
+				font-family: $font-rale-bold
+		.controls
+			margin-bottom: 30px
+			display: flex
+			justify-content: flex-end
+			.button
+				display: flex
+				align-items: center
+				justify-content: center
+				text-align: center
+				padding: 13px 20px
+			.button:first-child
+				margin-right: 16px
+		p
+			margin: 0
+			font-family: $font-rale-regular
+			font-size: 12px	
+
+	+media($bp-mobile-l)
+		.cart-summary
+			.controls
+				.button
+					padding: 15px 25px
+					min-width: 184px
+	+media($bp-mobile-xl)
+		.cart-overview
+			padding: 30px
+	+media($bp-tablet)
+		min-width: 500px
+		width: auto
+		border-radius: 5px
+		.product
+			img
+				padding-left: 20px
+		&:before
+			right: 25px
+	+media($bp-desktop)
+		top: 75%
+		.cart-overview
+			max-height: calc(100vh - 150px)
+
+

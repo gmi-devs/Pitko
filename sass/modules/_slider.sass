@@ -1,0 +1,101 @@
+.slider
+	.slider-container
+		position: relative
+		height: 80px
+		overflow: hidden
+		padding-top: 20px
+		
+	.controls
+		position: absolute
+		top: 50%
+		transform: translateY(-50%)
+		z-index: 1
+		padding: 10px
+		svg
+			width: 20px
+		&:hover
+			path 
+				fill: $color-yellow
+		&.prev
+			left: 5px
+			
+		&.next
+			right: 5px
+
+	.slider-core
+		transition: .3s transform
+
+		&.init
+			transform: scale(0)
+	.slide
+		padding: 0 40%
+
+	.highlight
+		display: none
+	.cta
+		display: none
+
+	+media($bp-mobile-xl)
+		.slider-container
+			padding-left: 55px
+			padding-right: 55px
+		.slide
+			padding: 0 25%
+
+	+media($bp-laptop)
+		.slider-container
+			padding-top: 0
+		.slider-core
+			padding-top: 26%
+			padding-bottom: 13%
+		.slide
+			position: relative
+			padding: 0 30%
+			.slider-product
+				transition: .3s transform
+
+
+			a:first-of-type
+				pointer-events: none
+
+		.highlight
+			position: absolute
+			top: -78%
+			left: 50%
+			right: 0
+			width: 150%
+			transform: translateX(-50%) scale(0)
+			display: flex
+			flex-direction: column
+			align-items: center
+			transition: .4s transform			
+			h2
+				position: absolute
+				top: 5%
+				font-size: 7vw
+				margin: 0
+				font-family: $font-tam-1
+		.cta
+			position: absolute
+			top: calc(100% + 60px)
+			left: 0
+			width: 100%
+			display: block
+			display: none
+			button
+				padding: 15px 40px
+
+		.center
+			.highlight
+				transform: translateX(-50%) scale(1)
+			.slider-product
+				transform: scale(1.5) translateY(-7%)
+			.cta
+				display: block
+
+	+media($bp-desktop)
+		.highlight
+			h2
+				font-size: 90px
+
+		

@@ -1,0 +1,127 @@
+.product-single
+	h1
+		font-family: $font-tam-1
+		font-size: 20vw
+		margin-top: -7%
+	.h3
+		margin-bottom: 30px
+
+	p
+		margin-bottom: 30px
+
+	.container-920:first-child
+		padding-bottom: 40px
+		border-bottom: 1px solid $color-grey
+		margin-bottom: 50px
+
+	.img-container
+		padding: 0 40%
+
+	.product-detail
+		.headline
+			display: none
+		.select-unit
+			display: flex
+			flex-direction: column
+			align-items: center
+		.button
+			margin: 0 5px
+			span
+				display: block
+				font-family: $font-rale-regular
+		.packing
+			margin-bottom: 30px
+			.button
+				padding: 15px 20px
+				float: left
+				&.active
+					background-color: $color-yellow
+		.quantity
+			margin-bottom: 30px
+			display: flex
+			input
+				user-select: none
+				color: #fff
+				background-color: transparent
+				font-size: 23px
+				text-align: center
+				max-width: 100px
+			.button
+				padding: 0
+				svg
+					width: 40px
+					height: 40px
+
+	.product-container
+		+clearfix()
+		.product
+			width: calc(100% / 4)
+			float: left
+			padding: 0 3%
+
+	+media($bp-mobile-xl)
+		.h3
+			font-size: 28px
+			margin-bottom: 40px
+		.product-container
+			.product
+				padding: 0 5%
+				transition: .4s transform
+				&:hover
+					transform: scale(1.14)
+
+	+media($bp-mobile-xxl)
+		.headline
+			+span-columns(7)
+			+shift(5)
+			h1
+				font-size: 100px
+				margin-top: 0
+				text-align: left
+				margin-left: -5px
+		.description
+			+span-columns(12)
+			display: flex
+		.img-container
+			padding: 0
+			+span-columns(5)
+			img
+				width: 150px
+				margin: 0 auto
+				display: block
+		.product-detail
+			+span-columns(7)
+			display: flex
+			flex-direction: column
+			p
+				flex-grow: 1
+				margin-bottom: 0
+			.select-unit
+				align-items: flex-start
+				flex-grow: 1
+				margin-left: -5px
+
+	+media($bp-desktop)
+		.h3
+			font-size: 32px
+			margin-bottom: 50px
+		.container-920:first-child
+			padding-bottom: 40px
+			margin-bottom: 60px
+			> .headline
+				display: none
+		.img-container
+			img
+				width: auto
+				max-width: 100%
+				margin: 0 auto
+				display: block
+		.product-detail
+			.headline
+				display: block
+				+span-columns(12)
+				+shift(0)
+
+			
+				
+

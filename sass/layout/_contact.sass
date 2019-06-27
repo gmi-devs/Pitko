@@ -1,0 +1,31 @@
+.contact
+	margin-bottom: 60px
+	a 
+		color: $color-yellow
+	.subtitle
+		margin-bottom: 60px
+		font-size: 5vw
+		strong
+			font-family: $font-rale-bold
+		p
+			margin: 0
+		+media($bp-mobile-xl)
+			font-size: 20px
+			strong
+				font-size: 26px
+	.info-container
+		display: flex
+		flex-direction: column
+		+media($bp-mobile-xl)
+			flex-direction: row
+	.left
+		+media($bp-mobile-xl)
+			width: 50%
+	.right 
+		+media($bp-mobile-xl)
+			width: 50%
+
+	.info-item
+		margin-bottom: 15px
+		.desc
+			margin-right: 10px

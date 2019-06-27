@@ -1,0 +1,20 @@
+.hamb
+	cursor: pointer
+	padding: 15px
+	.line 
+		width: 30px
+		height: 2px
+		background-color: #fff
+		transition: .3s all
+		&:nth-child(2)
+			margin: 7px 0
+
+	&.change .line
+		background-color: $color-yellow
+
+	&.change .line:nth-child(1) 
+		transform: translateY(9px) rotate(-45deg)
+	&.change .line:nth-child(2)
+		opacity: 0
+	&.change .line:nth-child(3) 
+		transform: translateY(-9px) rotate(45deg)

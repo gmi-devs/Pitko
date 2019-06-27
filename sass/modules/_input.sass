@@ -1,0 +1,17 @@
+input
+	border-radius: 5px
+	border: 1px solid transparent
+	font-size: 16px
+	line-height: 1
+	width: 100%
+	&:focus
+		border-color: $color-yellow
+	&.error
+		border-color: $color-red
+	&[type="number"]
+		pointer-events: none
+		-moz-appearance: textfield
+		&::-webkit-inner-spin-button 
+		    -webkit-appearance: none
+		&::-webkit-outer-spin-button 
+		    -webkit-appearance: none

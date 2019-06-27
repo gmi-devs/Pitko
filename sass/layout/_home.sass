@@ -1,0 +1,182 @@
+section
+	margin-bottom: 17%
+	text-align: center
+	&.introduction
+		margin-bottom: 10%
+		h1
+			span
+				display: block
+				&:nth-child(1)
+					font-family: $font-rale-regular
+				&:nth-child(2)
+					font-family: $font-rale-bold
+		img
+			width: auto
+			max-width: 100%
+			padding: 0 15%
+	&.about
+		position: relative
+		.decoration-images
+			.left, .right
+				position: absolute
+				top: 0
+				width: 15%
+				transition: .4s all
+
+			img
+				position: absolute
+
+			.left
+				left: -200px
+
+				img
+					&:nth-child(1)
+						top: 0
+						left: 0
+						transform: translate(-30%, -100%) scaleX(-1)
+						width: 100%
+						z-index: 1
+					&:nth-child(2)
+						top: 0
+						left: 0
+						transform: translate(60%, -60%)
+						width: 60%
+			.right
+				right: -200px
+				img
+					&:nth-child(1)
+						top: 0
+						right: 0
+						transform: translate(15%, -50%)
+						width: 120%
+						z-index: 1
+					&:nth-child(2)
+						top: 0
+						right: 0
+						transform: translate(-25%, 8%)
+						width: 90%
+			+media($bp-laptop)
+				.left
+					left: 0
+					animation: inWiew 1s
+				.right
+					right: -100px
+					animation: inWiew 1s
+				@keyframes inWiew
+					from
+						left: -400px
+						right: -400px
+
+
+
+
+	&.slider
+		margin-bottom: 10%
+		padding-top: 80px
+		margin-top: -80px						
+	&.blog-latest
+		.post-container
+			+clearfix()
+			padding: 0 20px
+		h1
+			text-align: left
+			display: flex
+			justify-content: space-between
+			align-items: center
+			.link
+				font-size: 16px
+				font-family: $font-rale-regular
+				display: none
+				margin-right: 20px
+		.post
+			text-align: left
+			+span-columns(12)
+			+omega(n)
+			margin-bottom: 30px	
+			.img-container
+				+aspect-ratio(436, 307)
+				overflow: hidden
+				margin-bottom: 7px
+				border-radius: 5px
+				img
+					position: absolute
+					top: 50%
+					left: 50%
+					transform: translate(-50%, -50%)
+					width: auto
+					height: auto
+					min-width: 100%
+					min-height: 100%
+					transition: .5s transform
+				&:hover
+					img
+						transform: translate(-50%, -50%) scale(1.2) 
+			.date
+				color: #fff
+				margin-bottom: 3px
+			+media($bp-mobile-xxl)
+				+span-columns(6)
+				+omega-reset(n)
+				+omega(2n)
+				&:last-child
+					display: none
+			+media($bp-laptop)
+				+span-columns(4)
+				+omega-reset(2n)
+				&:last-child
+					display: block
+			h3
+				margin-bottom: 0
+
+	&.teaser
+		margin-bottom: 0
+		padding: 14%
+		background-position: center
+		background-size: cover
+		background-repeat: no-repeat
+		display: flex
+		flex-direction: column
+		justify-content: center
+		align-items: center
+		+media($bp-mobile-xxl)
+			padding: 10%
+		h2
+			font-family: $font-tam-1
+			margin-bottom: 30px
+			font-size: 15vw
+			+media($bp-mobile-xl)
+				font-size: 90px
+
+	+media($bp-tablet)
+		margin-bottom: 10%
+		&.blog-latest
+			&.blog-latest
+				h1 .link
+					display: block
+		&.introduction
+			margin-bottom: 5%
+			img
+				padding: 0 20%
+	+media($bp-laptop)
+		&.slider
+			.h2
+				margin-bottom: 0
+	+media($bp-desktop)
+		margin-bottom: 150px
+		&.introduction
+			margin-bottom: 100px
+			img
+				padding: 0
+		&.slider
+			padding-top: 10px
+			margin-top: 0
+			margin-bottom: 100px
+			.h2
+				margin-bottom: 20px
+		&.teaser
+			padding: 0
+			height: 515px
+			h2
+				font-size: 120px
+				margin-bottom: 40px
+

@@ -1,0 +1,26 @@
+.button
+	border-radius: 5px
+	padding: 15px 25px
+	font-family: $font-rale-bold
+	font-size: 16px
+	transition: .3s all
+	&.white
+		background-color: #fff
+		color: #000
+		&.wborder
+			border: 1px solid #000
+		&:hover
+			background-color: $color-yellow
+	&.black
+		background-color: #000
+		color: #fff
+		border: 1px solid #000
+		&:hover
+			background-color: $color-yellow
+			color: #000 
+	&.large
+		min-width: 150px
+	&.disabled
+		pointer-events: none
+		border: 1px solid $color-lightgrey
+		background-color: $color-lightgrey

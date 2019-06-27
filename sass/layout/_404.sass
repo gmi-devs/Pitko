@@ -1,0 +1,24 @@
+.error404
+	main
+		max-width: 1800px
+		margin: 0 auto
+		background-repeat: no-repeat
+		background-position: top center
+		background-size: cover
+		background-image: url(img/404.jpg)
+		display: flex
+		justify-content: center
+		align-items: center
+		min-height: calc(100vh - 60px - 200px)
+		flex-direction: column
+		h1
+			font-family: $font-tam-1
+			font-size: 170px
+			margin: 0
+			margin-top: -80px
+		h2
+			text-align: center
+			padding: 0 15px
+		+media($bp-desktop)
+			min-height: calc(100vh - 168px - 20px - 324px)
+			margin-top: 20px
