@@ -54,13 +54,24 @@ function submitForm(event){
 				validate.splice(index, 1);
 			}
 		}
-
 	});
+
 	form['cart'].value = localStorage.getItem(cart.key);
 	form['total'].value = localStorage.getItem('pitotalprice');
 	if(validate.length === 0){
 		form['submitted'].value = true;
 		form.submit();
+	}else {
+		var menuBreak = window.matchMedia("(min-width: 1300px)");
+		var offset = 0;
+		if (!menuBreak.matches) {
+			offset = 110;
+		} else {
+			offset = 40;
+		}
+		$('html, body').animate({
+			scrollTop: $(validate).first().offset().top - offset
+		}, 500);
 	}
 }
 
@@ -73,7 +84,7 @@ function slideToProducts(e){
 	if(location.pathname === "/"){
 		e.preventDefault();
 		$("#cart-overview").slideUp(200, function(){		
-			$('html, body').animate({
+			$('html').animate({
 				scrollTop: $("#pive").offset().top
 			}, 500)
 		});	

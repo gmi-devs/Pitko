@@ -70,7 +70,7 @@
 		if(wp_mail( $to, $subject, $msg, $headers )){
 			$success = true;
 		}else{
-			$error = false;
+			$error = true;
 		}
 	?>
 <?php endif; ?>
@@ -153,8 +153,8 @@
 				<div class="container-1400">
 					<div class="mail-checkout">
 						<h1>Dogodila se greška :(</h1>
-						<p>Došlo je do pogreške prilikom narudžbe. Kontaktirajte administratora.</p>
-						<a href="/kontakt" class="button white">Kontakt</a>
+						<p>Došlo je do pogreške prilikom narudžbe. Prijavite grešku.</p>
+						<a href="mailto:pitkoservices@gmail.com" class="button white">Kontakt</a>
 					</div>
 				</div>
 			<?php endif; ?>
