@@ -81,7 +81,7 @@ function toggleCart(e){
 }
 
 function slideToProducts(e){
-	if(location.pathname === "/"){
+	if($('body').hasClass('home')){
 		e.preventDefault();
 		$("#cart-overview").slideUp(200, function(){		
 			$('html').animate({

@@ -98,12 +98,12 @@ add_action( 'init', 'pi_create_cpt' );
 
 add_theme_support( 'post-thumbnails'); 
 
-add_image_size( 'introduction', 678);
-add_image_size( 'slider', 150);
-add_image_size( 'ornament', 387);
+add_image_size( 'introduction', 678, 502, true);
+add_image_size( 'slider', 155);
+add_image_size( 'ornament', 390, 390, true);
 add_image_size( 'post-preview', 436, 307, true);
 add_image_size( 'teaser', 1920, 515, true);
-add_image_size( 'cart', 30);
+add_image_size( 'cart', 30, 100, true);
 
 // error_log('-------------Log---------------');
 
