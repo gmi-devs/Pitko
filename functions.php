@@ -25,14 +25,30 @@ function pi_hide_editor() {
 }
 add_action( 'init', 'pi_hide_editor' );
 
+remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+
+function pi_deregister_scripts(){
+  wp_deregister_script( 'wp-embed' );
+}
+add_action( 'wp_footer', 'pi_deregister_scripts' );
+
+
 function pi_resources(){
-	wp_enqueue_style('style', get_stylesheet_uri());
 
-	wp_enqueue_script( 'jquery-js', get_theme_file_uri( '/js/vendor/jquery-3.3.1.js' ), null, null , true);
-	wp_enqueue_script( 'slider', get_theme_file_uri( '/js/vendor/siema.min.js' ), null, null , true );
+	wp_enqueue_style( 'style-css', get_template_directory_uri() . '/dist/css/appstyle.min.css' );
 
-	wp_enqueue_script( 'cart', get_theme_file_uri( '/js/cart.js' ), null, null , true );
-	wp_enqueue_script( 'main', get_theme_file_uri( '/js/main.js' ), null, null , true );
+	wp_enqueue_script( 'jquery-js', get_theme_file_uri( 'dist/js/jquery.min.js' ), null, null , true);
+
+	if( is_front_page()){
+		wp_enqueue_script( 'slider-js', get_theme_file_uri( '/js/vendor/siema.min.js' ), null, null , true );
+	}
+
+	wp_enqueue_script( 'app-js', get_theme_file_uri( 'dist/js/app.min.js' ), null, null , true );
+
+	if (in_array($_SERVER['REMOTE_ADDR'], array('127.0.0.1', '::1'))) {
+		  wp_register_script('livereload', 'http://localhost:35729/livereload.js', null, null, true);
+		  wp_enqueue_script('livereload');
+	}
 }
 
 add_action('wp_enqueue_scripts', 'pi_resources');
@@ -45,6 +61,7 @@ function pi_register_nav() {
 	) );
 }
 add_action( 'after_setup_theme', 'pi_register_nav' );
+
 
 function pi_add_custom_menu_item ( $items, $args ) {
 	if( $args->theme_location == 'header' ) 
@@ -96,14 +113,16 @@ function pi_create_cpt() {
 }
 add_action( 'init', 'pi_create_cpt' );
 
+
 add_theme_support( 'post-thumbnails'); 
+
 
 add_image_size( 'introduction', 678, 502, true);
 add_image_size( 'slider', 155);
 add_image_size( 'ornament', 390, 390, true);
 add_image_size( 'post-preview', 436, 307, true);
 add_image_size( 'teaser', 1920, 515, true);
-add_image_size( 'cart', 30, 100, true);
+add_image_size( 'cart', 30);
 
 // error_log('-------------Log---------------');
 

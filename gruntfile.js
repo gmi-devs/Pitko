@@ -8,29 +8,55 @@ module.exports = function(grunt){
 			options: {
 				implementation: sass,
 			},
-			dist: {
+			compile: {
 				files: {
-					'style.css': 'sass/pitko.sass'
+					'css/style.css': 'sass/pitko.sass'
 				}
 			}
 		},
+
 		babel: {
 			options: {
 				sourceMap: false
 			},
 			dist: {
 				files: {
-					"dist/cart.js": "js/cart.js"
+					'js/cart.js': 'js/es6/cart.js'
 				}
 			}
 		},
+
+		concat: {
+			dev: {
+				src: ['js/cart.js', 'js/main.js'],
+				dest: 'js/built.js',
+			},
+		},
+
+		cssmin: {
+			minify: {
+				files: {
+					'dist/css/appstyle.min.css' : 'css/style.css',
+				}
+			}
+		},
+
+		uglify: {
+			js: {
+				files: {
+					'dist/js/jquery.min.js' : 'js/vendor/jquery-3.3.1.js',
+					'dist/js/app.min.js': 'js/built.js',
+				}
+			}
+		},
+
 		watch: {
 			options: {
 				livereload: true,
 			},
 			sass: {
-				files: ["sass/**"],
-				tasks: ["sass:dist"],
+				files: ['sass/**'],
+				tasks: ['sass:compile', 'cssmin:minify'],
 				options: {
 					spawn: false
 				}
@@ -39,12 +65,10 @@ module.exports = function(grunt){
 				files: ['*.php']
 			},
 			js: {
-				files: ['js/*.js']
+				files: ['js/**'],
+				tasks: ['babel:dist', 'concat:dev', 'uglify:js']
 			}
 		}
+
 	});
-
-	grunt.loadNpmTasks('grunt-sass');
-	grunt.loadNpmTasks('grunt-contrib-watch');
-
 }

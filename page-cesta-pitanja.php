@@ -14,7 +14,9 @@ if ( $query->have_posts() ) : ?>
 					$answer = get_field('answer'); ?>
 					<article class="accordion">
 						<h2><div><span class="control minus"><?php get_template_part( 'partials/svg/minus.svg', 'minus' )?></span><span class="control plus"><?php get_template_part( 'partials/svg/plus.svg', 'plus' )?></span></div><?php echo $question; ?></h2>
-						<p class="answer"><?php echo $answer; ?></p>
+						<div class="answer">
+							<p><?php echo $answer; ?></p>
+						</div>
 					</div>
 				<?php endwhile; ?>
 			</div>

@@ -10,10 +10,11 @@ body
 	+media($bp-desktop)
 		padding-top: 0
 	.bg
-		background-image: url(img/bg.jpg)
+		background-image: url(../../img/bg.jpg)
 		background-attachment: fixed
 		background-position: center
 		background-size: contain
+		// background-repeat: no-repeat
 		position: fixed
 		z-index: -1
 		top: 0
@@ -24,7 +25,7 @@ body
 		opacity: 1
 		@keyframes bg 
 			from
-				opacity: 0
+				opacity: 1
 
 
 ul
@@ -137,6 +138,9 @@ main
 	&.collapse
 		margin-bottom: 0
 
+iframe
+	width: 100%
+
 .container-480
 	+clearfix()
 	max-width: 480px
@@ -162,3 +166,6 @@ main
 
 .center 
 	text-align: center
+
+.wp-block-embed
+	margin: 0

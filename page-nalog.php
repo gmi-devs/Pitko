@@ -143,7 +143,7 @@
 			<?php if($success): ?>
 				<div class="container-1400">
 					<div class="mail-checkout">
-						<h1>Hvala na narudžbi!</h1>
+						<h1>Hvala na narudžbi !</h1>
 						<p>Vaša narudžba je poslana na obradu.</p>
 						<a href="/" class="button white">Povratak na naslovnicu</a>
 					</div>

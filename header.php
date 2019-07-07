@@ -15,7 +15,6 @@
 		@font-face {
             font-family: 'Raleway-Bold';
 			src: url("<?php echo get_template_directory_uri() ?>/fonts/rale/Raleway-Bold.ttf");
-
         }
 		@font-face {
             font-family: 'Tamaki-1';

@@ -315,7 +315,7 @@ $(document).ready(function(){
 });
 
 window.onload = function(){
-		if($(".slider").length > 0){
+	if($(".slider").length > 0){
 		module.slider();
 	}
 }
