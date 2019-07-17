@@ -85,12 +85,12 @@ function slideToProducts(el, e){
 		e.preventDefault();
 		if($(el).parents('#cart-overview').length > 0) {
 			$("#cart-overview").slideUp(200, function(){		
-				$('html').animate({
+				$('html, body').animate({
 					scrollTop: $("#pive").offset().top
 				}, 500)
 			});	
 		}else {
-			$('html').animate({
+			$('html, body').animate({
 				scrollTop: $("#pive").offset().top
 			}, 500)
 		}
