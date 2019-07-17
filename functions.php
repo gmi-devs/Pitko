@@ -43,8 +43,8 @@ function pi_resources(){
 		wp_enqueue_script( 'slider-js', get_theme_file_uri( '/js/vendor/siema.min.js' ), null, null , true );
 	}
 
-	wp_enqueue_script( 'app-js', get_theme_file_uri( 'dist/js/app.min.js' ), null, null , true );
-	// wp_enqueue_script( 'app-js', get_theme_file_uri( 'js/built.js' ), null, null , true );
+	// wp_enqueue_script( 'app-js', get_theme_file_uri( 'dist/js/app.min.js' ), null, null , true );
+	wp_enqueue_script( 'app-js', get_theme_file_uri( 'js/built.js' ), null, null , true );
 
 	if (in_array($_SERVER['REMOTE_ADDR'], array('127.0.0.1', '::1'))) {
 		  wp_register_script('livereload', 'http://localhost:35729/livereload.js', null, null, true);

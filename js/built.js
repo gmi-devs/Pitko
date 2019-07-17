@@ -444,10 +444,10 @@ module.pitkoSlider = function(){
 		$slidesContainer.animate({
 			'left': '-=' + slideWidth
 		}, animationSpeed, function(){
-			if(currentSlide === 6){
+			if(currentSlide === (numOfSlides + 1)){
 				currentSlide = 1;
 				$slidesContainer.append($slide.clone());
-				$(".pi-slide:nth-child(-n+5)").remove();
+				$(".pi-slide:nth-child(-n + " + numOfSlides + ")").remove();
 				$slidesContainer.css('left', -(slideWidth * numOfSlides));
 			}
 		});
@@ -462,10 +462,10 @@ module.pitkoSlider = function(){
 		$slidesContainer.animate({
 			'left': '+=' + slideWidth
 		}, animationSpeed, function(){
-			if(currentSlide === -4){
+			if(currentSlide === -(numOfSlides - 1)){
 				currentSlide = 1;
 				$slidesContainer.prepend($slide.clone())
-				$(".pi-slide:nth-last-child(-n+5)").remove();
+				$(".pi-slide:nth-last-child(-n + " + numOfSlides + ")").remove();
 				$slidesContainer.css('left', -(slideWidth * numOfSlides));
 			}
 		});
