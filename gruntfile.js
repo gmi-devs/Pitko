@@ -69,6 +69,5 @@ module.exports = function(grunt){
 				tasks: ['babel:dist', 'concat:dev', 'uglify:js']
 			}
 		}
-
 	});
 }

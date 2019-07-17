@@ -119,7 +119,7 @@ function buildCart() {
   } else {
     var message = '<div class="empty-cart">\
 						<p>Tvoja košarica je prazna!</p>\
-						<div><a href="/#pive" onclick="slideToProducts(event)"><button class="button black">Odaberi pitko</button></a><div>\
+						<div><a href="/#pive" onclick="slideToProducts(this, event)"><button class="button black">Odaberi pitko</button></a><div>\
 						</div>';
     cartOverview.innerHTML = message;
     removeCartIndicator(cartIcons);
@@ -173,7 +173,7 @@ function buildCart() {
 					<!--<div class="product-sum"><span>Ukupna cijena piva</span><span>30,00 kn</span></div>-->\
 					<!--<div class="delivery"><span>Dostava</span><span>20,00 kn</span></div>-->\
 					<div class="total"><span>UKUPNO ZA PLATITI</span><span class="total-price"></span></div>\
-					<div class="controls"><a href="/#pive" class="button white wborder" onclick="slideToProducts(event)">Nastavi kupovinu</a><a href="/nalog" class="button black order">Naruči</a></div>\
+					<div class="controls"><a href="/#pive" onclick="slideToProducts(this, event)" class="button white wborder">Nastavi kupovinu</a><a href="/nalog" class="button black order">Naruči</a></div>\
 					<p>Minimalan broj za narudžbu je šest piva.!</p>';
     summary.innerHTML = summaryInner;
     cartOverview.appendChild(summary);

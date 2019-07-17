@@ -119,7 +119,7 @@ function buildCart() {
   } else {
     var message = '<div class="empty-cart">\
 						<p>Tvoja košarica je prazna!</p>\
-						<div><a href="/#pive" onclick="slideToProducts(event)"><button class="button black">Odaberi pitko</button></a><div>\
+						<div><a href="/#pive" onclick="slideToProducts(this, event)"><button class="button black">Odaberi pitko</button></a><div>\
 						</div>';
     cartOverview.innerHTML = message;
     removeCartIndicator(cartIcons);
@@ -173,7 +173,7 @@ function buildCart() {
 					<!--<div class="product-sum"><span>Ukupna cijena piva</span><span>30,00 kn</span></div>-->\
 					<!--<div class="delivery"><span>Dostava</span><span>20,00 kn</span></div>-->\
 					<div class="total"><span>UKUPNO ZA PLATITI</span><span class="total-price"></span></div>\
-					<div class="controls"><a href="/#pive" class="button white wborder" onclick="slideToProducts(event)">Nastavi kupovinu</a><a href="/nalog" class="button black order">Naruči</a></div>\
+					<div class="controls"><a href="/#pive" onclick="slideToProducts(this, event)" class="button white wborder">Nastavi kupovinu</a><a href="/nalog" class="button black order">Naruči</a></div>\
 					<p>Minimalan broj za narudžbu je šest piva.!</p>';
     summary.innerHTML = summaryInner;
     cartOverview.appendChild(summary);
@@ -356,14 +356,20 @@ function toggleCart(e){
 	$("#cart-overview").toggle()
 }
 
-function slideToProducts(e){
+function slideToProducts(el, e){
 	if($('body').hasClass('home')){
 		e.preventDefault();
-		$("#cart-overview").slideUp(200, function(){		
+		if($(el).parents('#cart-overview').length > 0) {
+			$("#cart-overview").slideUp(200, function(){		
+				$('html').animate({
+					scrollTop: $("#pive").offset().top
+				}, 500)
+			});	
+		}else {
 			$('html').animate({
 				scrollTop: $("#pive").offset().top
 			}, 500)
-		});	
+		}
 	}
 }
 
@@ -413,20 +419,20 @@ module.pitkoSlider = function(){
 	var $prev = $('.slider .prev');
 	var $next = $('.slider .next');
 
- 	var slideWidth = $(".pi-slider").width() / 5;
- 	var numOfSlides = $slide.length;
+	var slideWidth = $(".pi-slider").width() / 5;
+	var numOfSlides = $slide.length;
 
- 	$slide.width(slideWidth);
+	$slide.width(slideWidth);
 
- 	$slidesContainer.prepend($slide.clone());
- 	$slidesContainer.append($slide.clone());
+	$slidesContainer.prepend($slide.clone());
+	$slidesContainer.append($slide.clone());
 
- 	var totalNumOfSlides = $slidesContainer.find('.pi-slide').length;
+	var totalNumOfSlides = $slidesContainer.find('.pi-slide').length;
 
- 	$slide.eq(2).addClass('center');
+	$slide.eq(2).addClass('center');
 
- 	$slidesContainer.width(slideWidth * totalNumOfSlides)
- 	$slidesContainer.css('left', -(slideWidth * numOfSlides));
+	$slidesContainer.width(slideWidth * totalNumOfSlides)
+	$slidesContainer.css('left', -(slideWidth * numOfSlides));
 
 	function left(){
 		if($slidesContainer.is(':animated')) return;

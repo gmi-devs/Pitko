@@ -80,14 +80,20 @@ function toggleCart(e){
 	$("#cart-overview").toggle()
 }
 
-function slideToProducts(e){
+function slideToProducts(el, e){
 	if($('body').hasClass('home')){
 		e.preventDefault();
-		$("#cart-overview").slideUp(200, function(){		
+		if($(el).parents('#cart-overview').length > 0) {
+			$("#cart-overview").slideUp(200, function(){		
+				$('html').animate({
+					scrollTop: $("#pive").offset().top
+				}, 500)
+			});	
+		}else {
 			$('html').animate({
 				scrollTop: $("#pive").offset().top
 			}, 500)
-		});	
+		}
 	}
 }
 
@@ -137,20 +143,20 @@ module.pitkoSlider = function(){
 	var $prev = $('.slider .prev');
 	var $next = $('.slider .next');
 
- 	var slideWidth = $(".pi-slider").width() / 5;
- 	var numOfSlides = $slide.length;
+	var slideWidth = $(".pi-slider").width() / 5;
+	var numOfSlides = $slide.length;
 
- 	$slide.width(slideWidth);
+	$slide.width(slideWidth);
 
- 	$slidesContainer.prepend($slide.clone());
- 	$slidesContainer.append($slide.clone());
+	$slidesContainer.prepend($slide.clone());
+	$slidesContainer.append($slide.clone());
 
- 	var totalNumOfSlides = $slidesContainer.find('.pi-slide').length;
+	var totalNumOfSlides = $slidesContainer.find('.pi-slide').length;
 
- 	$slide.eq(2).addClass('center');
+	$slide.eq(2).addClass('center');
 
- 	$slidesContainer.width(slideWidth * totalNumOfSlides)
- 	$slidesContainer.css('left', -(slideWidth * numOfSlides));
+	$slidesContainer.width(slideWidth * totalNumOfSlides)
+	$slidesContainer.css('left', -(slideWidth * numOfSlides));
 
 	function left(){
 		if($slidesContainer.is(':animated')) return;

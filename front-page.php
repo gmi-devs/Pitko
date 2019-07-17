@@ -156,7 +156,7 @@ if($about): ?>
 	<?php if($teaser): ?>
 		<section class="teaser" style="background-image: url('<?php echo $teaser['image']['sizes']['teaser'] ?>')">
 			<h2><?php echo $teaser['title'] ?></h2>
-			<a href="/#pive" onclick="slideToProducts(event)"><button class="button white"><?php echo $teaser['cta'] ?></button></a>
+			<a href="/#pive" onclick="slideToProducts(this, event)"><button class="button white"><?php echo $teaser['cta'] ?></button></a>
 		</section>
 	<?php endif; ?>
 
