@@ -1389,3 +1389,16 @@ form input {
     .error404 main {
       min-height: calc(100vh - 168px - 20px - 324px);
       margin-top: 20px; } }
+
+.not-supported {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  font-size: 40px;
+  text-align: center;
+  margin-top: -70px; }
+  @media screen and (min-width: 1300px) {
+    .not-supported {
+      margin-top: 0; } }
