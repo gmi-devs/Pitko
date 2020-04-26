@@ -520,7 +520,8 @@ textarea {
       top: 5%;
       font-size: 7vw;
       margin: 0;
-      font-family: "Tamaki-1"; }
+      font-family: "Tamaki-1";
+      user-select: none; }
   .slider .cta {
     position: absolute;
     top: calc(100% + 60px);
@@ -529,7 +530,8 @@ textarea {
     display: block;
     display: none; }
     .slider .cta button {
-      padding: 15px 40px; }
+      padding: 15px 40px;
+      user-select: none; }
   .slider .center .highlight {
     transform: translateX(-50%) scale(1); }
   .slider .center .slider-product {
