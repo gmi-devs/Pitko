@@ -136,6 +136,10 @@ p {
     p {
       margin-bottom: 30px; } }
 
+strong {
+  font-weight: normal;
+  font-family: "Raleway-Bold"; }
+
 main {
   overflow: hidden;
   display: block;
@@ -306,8 +310,8 @@ textarea {
 
 #cart-overview {
   position: absolute;
-  z-index: 1;
-  top: 100%;
+  z-index: 3;
+  top: calc(100% + 1px);
   right: 0;
   width: 100%;
   background-color: #fff;
@@ -746,7 +750,7 @@ header {
       padding: 15px; }
   header .pi-menu-container {
     position: absolute;
-    top: 100%;
+    top: calc(100% + 1px);
     left: 0;
     padding: 15px;
     background-color: #000;
@@ -755,7 +759,7 @@ header {
     border-bottom: 1px solid #383838;
     display: none;
     box-shadow: 0 0px 20px 0px rgba(0, 0, 0, 0.5);
-    z-index: 2; }
+    z-index: 4; }
     header .pi-menu-container .menu li {
       margin-bottom: 10px; }
       header .pi-menu-container .menu li a {
@@ -820,7 +824,8 @@ header {
         background-color: transparent;
         max-width: 700px;
         margin: 0 auto;
-        align-items: center; }
+        align-items: center;
+        z-index: 2; }
         header .pi-menu-container .menu-header-container {
           width: 100%; }
         header .pi-menu-container .menu {
@@ -1169,6 +1174,11 @@ section {
   @media screen and (min-width: 1300px) {
     .blog-archive .post .h3 {
       font-size: 23px; } }
+
+.blog-single ul {
+  list-style: disc;
+  padding-left: 15px;
+  margin-bottom: 30px; }
 
 .blog-single .h2 {
   text-align: left;
