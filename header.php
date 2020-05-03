@@ -64,7 +64,7 @@
 				<div class="line"></div>
 			</div>
 			<a href="/" class="logo"><img src="<?php echo get_template_directory_uri()?>/img/logo.svg" alt="logo-mobile"></a>
-			<div class="cart-icon" onclick="toggleCart(event)"><?php get_template_part( 'partials/svg/cart.svg', 'cart' ) ?></div>
+			<div class="cart-icon open-cart"><?php get_template_part( 'partials/svg/cart.svg', 'cart' ) ?></div>
 			<div class="pi-menu-container">
 				<?php wp_nav_menu(array('theme_location' => 'header')) ?>
 				<ul class="menu-extended">
@@ -72,8 +72,8 @@
 						<li><a href="/#pive" class="order"><button class="button white">Naruči&nbsp;pivo</button></a></li>
 					<?php endif; ?>
 					<li><a href="https://www.facebook.com/ppivovara/" target="_blank" rel="noreferrer"><?php get_template_part( 'partials/svg/facebook.svg', 'facebook' )?></a></li>
-					<li><a href="https://picgra.com/user/pitko2017/10835216089" target="_blank" rel="noreferrer"><?php get_template_part( 'partials/svg/instagram.svg', 'instagram' ) ?></a></li>
-					<li><a href="#" class="cart-icon" onclick="toggleCart(event)"><?php get_template_part( 'partials/svg/cart.svg', 'cart' ) ?></a></li>
+					<li><a href="https://www.instagram.com/explore/tags/pitoma%C4%8Dkapivovara/" target="_blank" rel="noreferrer"><?php get_template_part( 'partials/svg/instagram.svg', 'instagram' ) ?></a></li>
+					<li><a href="#" class="cart-icon open-cart"><?php get_template_part( 'partials/svg/cart.svg', 'cart' ) ?></a></li>
 				</ul>
 			</div>
 			<div id="cart-overview">

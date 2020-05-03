@@ -197,11 +197,19 @@ function buildCart(){
 		let summary = document.createElement('div');
 		summary.className = 'cart-summary';
 		let summaryInner = '\
-					<!--<div class="product-sum"><span>Ukupna cijena piva</span><span>30,00 kn</span></div>-->\
-					<!--<div class="delivery"><span>Dostava</span><span>20,00 kn</span></div>-->\
-					<div class="total"><span>UKUPNO ZA PLATITI</span><span class="total-price"></span></div>\
+					<div class="pricing-container">\
+						<div class="col">\
+							<span>Povratna naknada</span>\
+							<span class="product-sum">UKUPNO ZA PLATITI</span>\
+						</div>\
+						<div class="col">\
+							<span class="total-refund"></span>\
+							<span class="product-sum total-price"></span>\
+						</div>\
+					</div>\
 					<div class="controls"><a href="/#pive" onclick="slideToProducts(this, event)" class="button white wborder">Nastavi kupovinu</a><a href="/nalog" class="button black order">Naruči</a></div>\
-					<p>Minimalan broj za narudžbu je šest piva.!</p>';
+					<div class="delivery">Cijena dostave po paketu iznosi 30,00kn&nbsp;+&nbsp;PDV. <br/> Dostavu plaća primatelj prilikom preuzimanja paketa. <br/> Pakete šaljemo dostavnom službom <strong>DPD</strong> Croatia.</div>\
+					<div class="min-order">Minimalan broj za narudžbu je 12 piva.</div>';
 
 		summary.innerHTML = summaryInner;
 		cartOverview.appendChild(summary);
@@ -218,7 +226,7 @@ function numberOfProducts(){
 	items.forEach(item=>{
 		numberOfProducts += item.qty;
 	});
-	if(numberOfProducts >= 6){
+	if(numberOfProducts >= 12){
 		orderBtn.classList.remove('disabled');
 	}else {
 		orderBtn.classList.add('disabled');
@@ -282,14 +290,18 @@ function removeCartItem(ev){
 }
 
 function updateTotalPrice(){
-	let total = document.querySelector('.total-price');
+	let totalPrice = document.querySelector('.total-price');
+	let totalRefund = document.querySelector('.total-refund');
 	let items = cart.items;
-	let totalPrice = 0;
+	let totalPriceAmount = 0;
+	let totalRefundAmount = 0;
 	items.forEach(item=>{
-		totalPrice += item.qty * item.price
+		totalPriceAmount += item.qty * item.price;
+		totalRefundAmount += item.qty * 0.5;
 	});
-	total.textContent = (totalPrice).toFixed(2) + ' kn';
-	localStorage.setItem('pitotalprice', totalPrice);
+	totalRefund.textContent = (totalRefundAmount).toFixed(2) + ' kn';
+	totalPrice.textContent = (totalPriceAmount).toFixed(2) + ' kn';
+	localStorage.setItem('pitotalprice', totalPriceAmount);
 }
 
 document.addEventListener('DOMContentLoaded', () =>{

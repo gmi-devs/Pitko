@@ -11,7 +11,7 @@
 		)) ?>
 		<ul class="footer-icons">
 			<li><a href="https://www.facebook.com/ppivovara/"><?php get_template_part( 'partials/svg/facebook.svg', 'facebook' ) ?></a></li>
-			<li><a href="https://www.instagram.com/"><?php get_template_part( 'partials/svg/instagram.svg', 'instagram' ) ?></a></li>
+			<li><a href="https://www.instagram.com/explore/tags/pitoma%C4%8Dkapivovara/"><?php get_template_part( 'partials/svg/instagram.svg', 'instagram' ) ?></a></li>
 		</ul>
 	</div>
 

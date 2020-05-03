@@ -170,11 +170,19 @@ function buildCart() {
     var summary = document.createElement('div');
     summary.className = 'cart-summary';
     var summaryInner = '\
-					<!--<div class="product-sum"><span>Ukupna cijena piva</span><span>30,00 kn</span></div>-->\
-					<!--<div class="delivery"><span>Dostava</span><span>20,00 kn</span></div>-->\
-					<div class="total"><span>UKUPNO ZA PLATITI</span><span class="total-price"></span></div>\
+					<div class="pricing-container">\
+						<div class="col">\
+							<span>Povratna naknada</span>\
+							<span class="product-sum">UKUPNO ZA PLATITI</span>\
+						</div>\
+						<div class="col">\
+							<span class="total-refund"></span>\
+							<span class="product-sum total-price"></span>\
+						</div>\
+					</div>\
 					<div class="controls"><a href="/#pive" onclick="slideToProducts(this, event)" class="button white wborder">Nastavi kupovinu</a><a href="/nalog" class="button black order">Naruči</a></div>\
-					<p>Minimalan broj za narudžbu je šest piva.!</p>';
+					<div class="delivery">Cijena dostave po paketu iznosi 30,00kn&nbsp;+&nbsp;PDV. <br/> Dostavu plaća primatelj prilikom preuzimanja paketa. <br/> Pakete šaljemo dostavnom službom <strong>DPD</strong> Croatia.</div>\
+					<div class="min-order">Minimalan broj za narudžbu je 12 piva.</div>';
     summary.innerHTML = summaryInner;
     cartOverview.appendChild(summary);
     numberOfProducts();
@@ -190,7 +198,7 @@ function numberOfProducts() {
     numberOfProducts += item.qty;
   });
 
-  if (numberOfProducts >= 6) {
+  if (numberOfProducts >= 12) {
     orderBtn.classList.remove('disabled');
   } else {
     orderBtn.classList.add('disabled');
@@ -257,14 +265,18 @@ function removeCartItem(ev) {
 }
 
 function updateTotalPrice() {
-  var total = document.querySelector('.total-price');
+  var totalPrice = document.querySelector('.total-price');
+  var totalRefund = document.querySelector('.total-refund');
   var items = cart.items;
-  var totalPrice = 0;
+  var totalPriceAmount = 0;
+  var totalRefundAmount = 0;
   items.forEach(function (item) {
-    totalPrice += item.qty * item.price;
+    totalPriceAmount += item.qty * item.price;
+    totalRefundAmount += item.qty * 0.5;
   });
-  total.textContent = totalPrice.toFixed(2) + ' kn';
-  localStorage.setItem('pitotalprice', totalPrice);
+  totalRefund.textContent = totalRefundAmount.toFixed(2) + ' kn';
+  totalPrice.textContent = totalPriceAmount.toFixed(2) + ' kn';
+  localStorage.setItem('pitotalprice', totalPriceAmount);
 }
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -351,10 +363,6 @@ function submitForm(event){
 	}
 }
 
-function toggleCart(e){
-	e.preventDefault();
-	$("#cart-overview").toggle()
-}
 
 function slideToProducts(el, e){
 	if($('body').hasClass('home')){
@@ -383,6 +391,7 @@ module.navigation = {
 	menuTransform: function (menuBreak) {
 		$("header *").removeAttr('style');
 		$(".hamb").removeClass("change").off('click');
+		$(".open-cart").off("click");
 		if (!menuBreak.matches) {
 			module.navigation.menuMobile();
 		} else {
@@ -391,7 +400,9 @@ module.navigation = {
 	},
 
 	menuDesktop: function () {
-
+		$(".open-cart").click(function(){
+			$("#cart-overview").toggle()
+		});
 	},
 
 	menuMobile: function () {
@@ -401,7 +412,13 @@ module.navigation = {
 			if(!$(".pi-menu-container").is(':animated')){
 				$(this).toggleClass('change')
 				$(".pi-menu-container").slideToggle(duration)
+				$("#cart-overview").slideUp(duration)
 			}
+		});
+
+		$(".open-cart").click(function(){
+			$("#cart-overview").slideToggle(duration)
+			$(".pi-menu-container").slideUp(duration)
 		});
 	}
 };

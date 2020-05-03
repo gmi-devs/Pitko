@@ -5,7 +5,7 @@
 	right: 0
 	width: 100%
 	background-color: #fff
-	box-shadow: 0 2px 30px 0 #000000, 0 15px 20px 0 rgba(72,72,74,0.2)
+	box-shadow: 0 0px 20px 0px rgba(0,0,0,.5)
 	border-top: 4px solid $color-yellow
 	border-radius: 0 0 5px 5px
 	&:before
@@ -20,6 +20,7 @@
 	display: none
 	.cart-overview
 		padding: 15px
+		padding-bottom: 20px
 		max-height: calc(100vh - 70px)
 		overflow-y: auto
 	h2
@@ -80,48 +81,74 @@
 			display: inline-block
 			margin: 0 auto
 	.cart-summary
-		margin-top: 10px
-		display: flex
-		flex-direction: column
-		text-align: right
+		margin-top: 20px
 		span
 			color: #000
+		.pricing-container
+			display: flex 
+			margin-bottom: 40px
+			justify-content: space-between
+		.col
+			display: flex
+			flex-direction: column
+			span:first-child
+				margin-bottom: 5px
 			&:first-child
-				margin-right: 40px
+				align-items: flex-start
+			&:last-child
+				align-items: flex-end
+				margin-left: 30px
+
 		.product-sum
-			margin-bottom: 10px
+			font-family: $font-rale-bold
 		.delivery
-			margin-bottom: 10px
-		.total
-			margin-bottom: 30px
-			span
+			color: #000
+			margin-bottom: 15px
+			font-size: 13px
+			text-align: center
+			line-height: 1.4
+			br
+				display: none
+			strong
+				font-weight: normal
 				font-family: $font-rale-bold
 		.controls
 			margin-bottom: 30px
 			display: flex
-			justify-content: flex-end
+			justify-content: center
 			.button
+				font-size: 13px
 				display: flex
 				align-items: center
 				justify-content: center
 				text-align: center
 				padding: 13px 20px
+				width: 50%
+				white-space: nowrap
 			.button:first-child
-				margin-right: 16px
-		p
-			margin: 0
-			font-family: $font-rale-regular
-			font-size: 12px	
+				margin-right: 20px
+		.min-order
+			color: #000
+			font-size: 13px	
+			text-align: center
 
 	+media($bp-mobile-l)
 		.cart-summary
+			.delivery
+				br
+					display: block
 			.controls
 				.button
+					font-size: 16px
 					padding: 15px 25px
-					min-width: 184px
+
 	+media($bp-mobile-xl)
 		.cart-overview
 			padding: 30px
+		.cart-summary
+			.controls
+				.button
+
 	+media($bp-tablet)
 		min-width: 500px
 		width: auto

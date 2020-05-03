@@ -75,10 +75,6 @@ function submitForm(event){
 	}
 }
 
-function toggleCart(e){
-	e.preventDefault();
-	$("#cart-overview").toggle()
-}
 
 function slideToProducts(el, e){
 	if($('body').hasClass('home')){
@@ -107,6 +103,7 @@ module.navigation = {
 	menuTransform: function (menuBreak) {
 		$("header *").removeAttr('style');
 		$(".hamb").removeClass("change").off('click');
+		$(".open-cart").off("click");
 		if (!menuBreak.matches) {
 			module.navigation.menuMobile();
 		} else {
@@ -115,7 +112,9 @@ module.navigation = {
 	},
 
 	menuDesktop: function () {
-
+		$(".open-cart").click(function(){
+			$("#cart-overview").toggle()
+		});
 	},
 
 	menuMobile: function () {
@@ -125,7 +124,13 @@ module.navigation = {
 			if(!$(".pi-menu-container").is(':animated')){
 				$(this).toggleClass('change')
 				$(".pi-menu-container").slideToggle(duration)
+				$("#cart-overview").slideUp(duration)
 			}
+		});
+
+		$(".open-cart").click(function(){
+			$("#cart-overview").slideToggle(duration)
+			$(".pi-menu-container").slideUp(duration)
 		});
 	}
 };
