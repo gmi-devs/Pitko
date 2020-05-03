@@ -419,6 +419,10 @@ textarea {
       #cart-overview .cart-summary .delivery strong {
         font-weight: normal;
         font-family: "Raleway-Bold"; }
+      #cart-overview .cart-summary .delivery a {
+        color: black; }
+        #cart-overview .cart-summary .delivery a:hover {
+          border-bottom: 1px solid #DFBF36; }
     #cart-overview .cart-summary .controls {
       margin-bottom: 30px;
       display: flex;

@@ -208,7 +208,7 @@ function buildCart(){
 						</div>\
 					</div>\
 					<div class="controls"><a href="/#pive" onclick="slideToProducts(this, event)" class="button white wborder">Nastavi kupovinu</a><a href="/nalog" class="button black order">Naruči</a></div>\
-					<div class="delivery">Cijena dostave po paketu iznosi 30,00kn&nbsp;+&nbsp;PDV. <br/> Dostavu plaća primatelj prilikom preuzimanja paketa. <br/> Pakete šaljemo dostavnom službom <strong>DPD Croatia.</strong> </div>\
+					<div class="delivery">Cijena dostave po paketu iznosi 30,00kn&nbsp;+&nbsp;PDV. <br/> Dostavu plaća primatelj prilikom preuzimanja paketa. <br/> Pakete šaljemo dostavnom službom <strong><a href="https://www.dpd.com/hr/home/produkti_i_usluge" target="blank">DPD Croatia.</a></strong> </div>\
 					<div class="min-order">Minimalan broj za narudžbu je 12 piva.</div>';
 
 		summary.innerHTML = summaryInner;
