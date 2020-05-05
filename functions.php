@@ -55,6 +55,17 @@ function pi_resources(){
 add_action('wp_enqueue_scripts', 'pi_resources');
 
 
+function add_meta_tags() {
+?>
+  	<meta property="og:title" content="Pitko" />
+	<meta property="og:type" content="website" />
+	<meta property="og:description" content="<?php echo bloginfo("description") ?>">
+	<meta property="og:url" content="http://pitomacka-pivovara.hr/" />
+	<meta property="og:image" content="http://pitomacka-pivovara.hr/wp-content/uploads/2020/05/PitkoShowcaseOG.png" />
+<?php }
+add_action('wp_head', 'add_meta_tags');
+
+
 function pi_register_nav() {
 	register_nav_menus( array(
 		'header' => 'Header',
