@@ -71,8 +71,8 @@
 					<?php if(!is_front_page()): ?>
 						<li><a href="/#pive" class="order"><button class="button white">Naruči&nbsp;pivo</button></a></li>
 					<?php endif; ?>
-					<li><a href="https://www.facebook.com/ppivovara/" target="_blank" rel="noreferrer"><?php get_template_part( 'partials/svg/facebook.svg', 'facebook' )?></a></li>
-					<li><a href="https://www.instagram.com/explore/tags/pitoma%C4%8Dkapivovara/" target="_blank" rel="noreferrer"><?php get_template_part( 'partials/svg/instagram.svg', 'instagram' ) ?></a></li>
+					<li><a href="https://www.facebook.com/ppivovara/" target="_blank"><?php get_template_part( 'partials/svg/facebook.svg', 'facebook' )?></a></li>
+					<li><a href="https://www.instagram.com/pitko2017/" target="_blank"><?php get_template_part( 'partials/svg/instagram.svg', 'instagram' ) ?></a></li>
 					<li><a href="#" class="cart-icon open-cart"><?php get_template_part( 'partials/svg/cart.svg', 'cart' ) ?></a></li>
 				</ul>
 			</div>

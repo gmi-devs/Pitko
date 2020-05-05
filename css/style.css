@@ -45,6 +45,8 @@ a {
   color: #fff; }
   a.link {
     color: #DFBF36; }
+    a.link:hover {
+      text-decoration: underline; }
 
 img {
   vertical-align: top;
@@ -1178,6 +1180,11 @@ section {
   @media screen and (min-width: 1300px) {
     .blog-archive .post .h3 {
       font-size: 23px; } }
+
+.blog-single a {
+  color: #DFBF36; }
+  .blog-single a:hover {
+    text-decoration: underline; }
 
 .blog-single ul {
   list-style: disc;
