@@ -131,6 +131,7 @@ module.navigation = {
 		$(".open-cart").click(function(){
 			$("#cart-overview").slideToggle(duration)
 			$(".pi-menu-container").slideUp(duration)
+			$(".hamb").removeClass('change')
 		});
 	}
 };
