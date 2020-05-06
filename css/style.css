@@ -241,10 +241,10 @@ input {
   font-size: 16px;
   line-height: 1;
   width: 100%; }
-  input:focus {
-    border-color: #DFBF36; }
   input.error {
-    border-color: #D03F48; }
+    background-color: #D03F48; }
+  input:focus {
+    background-color: #DFBF36; }
   input[type="number"] {
     pointer-events: none;
     -moz-appearance: textfield; }
@@ -252,6 +252,8 @@ input {
       -webkit-appearance: none; }
     input[type="number"]::-webkit-outer-spin-button {
       -webkit-appearance: none; }
+  input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px #fff inset; }
 
 textarea {
   border-radius: 5px;
@@ -260,7 +262,7 @@ textarea {
   border: 1px solid transparent;
   font-size: 16px; }
   textarea:focus {
-    border-color: #DFBF36; }
+    background-color: #DFBF36; }
   textarea::placeholder {
     color: #d6d6d6; }
 

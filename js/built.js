@@ -614,6 +614,11 @@ $(document).ready(function(){
 	module.cookie();
 });
 
+$("form#order-form input[required]").focus(function(){
+	$(this).removeClass("error")
+	$(this).parent().removeClass("error")
+});
+
 window.onload = function(){
 	if($(".slider").length > 0){
 		module.slider();
