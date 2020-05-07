@@ -683,7 +683,7 @@ textarea {
     display: none; }
   .accordion p {
     margin: 0;
-    padding-top: 12px;
+    padding-top: 15px;
     color: #000; }
   .accordion.active .plus {
     display: none; }
