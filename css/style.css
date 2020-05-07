@@ -1251,6 +1251,9 @@ section {
 .product-single .product-detail .headline {
   display: none; }
 
+.product-single .product-detail p {
+  text-align: center; }
+
 .product-single .product-detail .select-unit {
   display: flex;
   flex-direction: column;
@@ -1352,7 +1355,8 @@ section {
       margin-right: 0; }
     .product-single .product-detail p {
       flex-grow: 1;
-      margin-bottom: 0; }
+      margin-bottom: 0;
+      text-align: left; }
     .product-single .product-detail .select-unit {
       align-items: flex-start;
       flex-grow: 1;

@@ -329,6 +329,7 @@ $(document).ready(function(){
 $("form#order-form input[required]").focus(function(){
 	$(this).removeClass("error")
 	$(this).parent().removeClass("error")
+	alert("asdf")
 });
 
 window.onload = function(){
