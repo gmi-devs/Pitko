@@ -17,7 +17,7 @@ if ( $query->have_posts() ) : ?>
 						<div class="answer">
 							<p><?php echo $answer; ?></p>
 						</div>
-					</div>
+					</article>
 				<?php endwhile; ?>
 			</div>
 		</div>
