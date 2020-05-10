@@ -1,7 +1,7 @@
 <?php get_header() ?>
 <?php if(isset($_POST["submitted"])): ?>
 	<?php 
-		$to = 'rekburek@gmail.com';
+		$to = ['rekburek@gmail.com'];
 		$subject = 'Pitko narudžba';
 		$headers = array(
     	"MIME-Version: 1.0",
@@ -10,6 +10,7 @@
 		$success = false;
 		$error = false;
 		$cart = json_decode(stripslashes($_POST['cart']));
+		$refund = $_POST['refund'];
 		$total = $_POST['total'];	
 
 		$table = '';
@@ -42,7 +43,11 @@
 
 		$tfoot = '<tfoot>
 					<tr>
-						<td colspan="4"></td>
+						<td colspan="4">Povratna naknada</td>
+						<td><strong>' . $refund .' kn</strong></td>
+					</tr>
+					<tr>
+						<td colspan="4"><strong>UKUPNO ZA PLATITI</strong></td>
 						<td><strong>' . $total .' kn</strong></td>
 					</tr>
 				</tfoot>';
@@ -88,6 +93,7 @@
 					<?php endif; ?>
 					<form id="order-form" action="/nalog" method="POST" novalidate>
 						<input name="cart" type="hidden">
+						<input name="refund" type="hidden">
 						<input name="total" type="hidden">
 						<input name="rand" type="hidden">
 

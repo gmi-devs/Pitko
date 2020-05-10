@@ -299,8 +299,10 @@ function updateTotalPrice(){
 		totalPriceAmount += item.qty * item.price;
 		totalRefundAmount += item.qty * 0.5;
 	});
+	totalPriceAmount = totalPriceAmount + totalRefundAmount;
 	totalRefund.textContent = (totalRefundAmount).toFixed(2) + ' kn';
 	totalPrice.textContent = (totalPriceAmount).toFixed(2) + ' kn';
+	localStorage.setItem('refund', totalRefundAmount);
 	localStorage.setItem('pitotalprice', totalPriceAmount);
 }
 

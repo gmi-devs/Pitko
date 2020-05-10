@@ -274,8 +274,10 @@ function updateTotalPrice() {
     totalPriceAmount += item.qty * item.price;
     totalRefundAmount += item.qty * 0.5;
   });
+  totalPriceAmount = totalPriceAmount + totalRefundAmount;
   totalRefund.textContent = totalRefundAmount.toFixed(2) + ' kn';
   totalPrice.textContent = totalPriceAmount.toFixed(2) + ' kn';
+  localStorage.setItem('refund', totalRefundAmount);
   localStorage.setItem('pitotalprice', totalPriceAmount);
 }
 
@@ -345,6 +347,7 @@ function submitForm(event){
 	});
 
 	form['cart'].value = localStorage.getItem(cart.key);
+	form['refund'].value = localStorage.getItem('refund');
 	form['total'].value = localStorage.getItem('pitotalprice');
 	if(validate.length === 0){
 		form['submitted'].value = true;
@@ -409,15 +412,13 @@ module.navigation = {
 		var duration = 300;
 
 		$(".hamb").on('click', function(){
-			if(!$(".pi-menu-container").is(':animated')){
-				$(this).toggleClass('change')
-				$(".pi-menu-container").slideToggle(duration)
-				$("#cart-overview").slideUp(duration)
-			}
+			$(this).toggleClass('change')
+			$(".pi-menu-container").stop().slideToggle(duration)
+			$("#cart-overview").slideUp(duration)
 		});
 
 		$(".open-cart").click(function(){
-			$("#cart-overview").slideToggle(duration)
+			$("#cart-overview").stop().slideToggle(duration)
 			$(".pi-menu-container").slideUp(duration)
 			$(".hamb").removeClass('change')
 		});
