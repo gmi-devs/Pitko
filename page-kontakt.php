@@ -95,5 +95,5 @@
 		});
 	}
 </script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQUh6EJ27vfpzaWjOBj3kNg1pZmD5I-Jw&callback=initMap" async defer></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpb_aZifFN87XR5dbINh5pZyNTBxmt0Ig&callback=initMap" async defer></script>
 <?php get_footer(); ?>
