@@ -91,13 +91,15 @@
 		.col
 			display: flex
 			flex-direction: column
-			span:first-child
+			span:not(:last-child)
 				margin-bottom: 5px
 			&:first-child
 				align-items: flex-start
 			&:last-child
 				align-items: flex-end
 				margin-left: 30px
+				span
+					text-align: right
 
 		.product-sum
 			font-family: $font-rale-bold

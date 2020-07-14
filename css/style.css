@@ -391,13 +391,15 @@ textarea {
     #cart-overview .cart-summary .col {
       display: flex;
       flex-direction: column; }
-      #cart-overview .cart-summary .col span:first-child {
+      #cart-overview .cart-summary .col span:not(:last-child) {
         margin-bottom: 5px; }
       #cart-overview .cart-summary .col:first-child {
         align-items: flex-start; }
       #cart-overview .cart-summary .col:last-child {
         align-items: flex-end;
         margin-left: 30px; }
+        #cart-overview .cart-summary .col:last-child span {
+          text-align: right; }
     #cart-overview .cart-summary .product-sum {
       font-family: "Raleway-Bold"; }
     #cart-overview .cart-summary .delivery {

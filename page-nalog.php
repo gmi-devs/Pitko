@@ -47,6 +47,10 @@
 						<td><strong>' . $refund .' kn</strong></td>
 					</tr>
 					<tr>
+						<td colspan="4">Dostava +  PDV</td>
+						<td><strong>37.5 kn</strong></td>
+					</tr>
+					<tr>
 						<td colspan="4"><strong>UKUPNO ZA PLATITI</strong></td>
 						<td><strong>' . $total .' kn</strong></td>
 					</tr>

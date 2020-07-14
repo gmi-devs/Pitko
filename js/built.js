@@ -173,10 +173,12 @@ function buildCart() {
 					<div class="pricing-container">\
 						<div class="col">\
 							<span>Povratna naknada</span>\
+							<span>Dostava + PDV</span>\
 							<span class="product-sum">UKUPNO ZA PLATITI</span>\
 						</div>\
 						<div class="col">\
 							<span class="total-refund"></span>\
+							<span class="delivery-amount"></span>\
 							<span class="product-sum total-price"></span>\
 						</div>\
 					</div>\
@@ -267,15 +269,18 @@ function removeCartItem(ev) {
 function updateTotalPrice() {
   var totalPrice = document.querySelector('.total-price');
   var totalRefund = document.querySelector('.total-refund');
+  var delivery = document.querySelector('.delivery-amount');
   var items = cart.items;
   var totalPriceAmount = 0;
   var totalRefundAmount = 0;
+  var deliveryAmount = 37.5;
   items.forEach(function (item) {
     totalPriceAmount += item.qty * item.price;
     totalRefundAmount += item.qty * 0.5;
   });
-  totalPriceAmount = totalPriceAmount + totalRefundAmount;
+  totalPriceAmount = totalPriceAmount + totalRefundAmount + deliveryAmount;
   totalRefund.textContent = totalRefundAmount.toFixed(2) + ' kn';
+  delivery.textContent = deliveryAmount.toFixed(2) + ' kn';
   totalPrice.textContent = totalPriceAmount.toFixed(2) + ' kn';
   localStorage.setItem('refund', totalRefundAmount);
   localStorage.setItem('pitotalprice', totalPriceAmount);
