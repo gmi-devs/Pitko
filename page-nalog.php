@@ -137,7 +137,7 @@
 								<input type="checkbox" name="consent" id="consent" required>
 								<div class="input-checked"></div>
 							</div>
-							<label for="consent">Suglasan/na sam sa <a href="/uvjeti-koristenja" class="link">Uvjetima korištenja</a> te dajem privolu za korištenje osobnih podataka</label>
+							<label for="consent">Suglasan/na sam sa <a href="/politika-privatnosti" class="link">Politikom privatnosti</a> te dajem privolu za korištenje osobnih podataka</label>
 						</div>
 
 						<div class="center">
