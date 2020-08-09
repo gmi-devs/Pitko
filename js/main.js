@@ -287,7 +287,7 @@ module.cookie = function(){
 		var consent = 
 		'<div class="cookie">\
 		<div class="container-1400">\
-		<p>Ova stranica koristi kolačiće u svrhe pružanja boljeg korisničkog iskustva. Ukoliko ste suglasni s tim, kliknite na "Slažem se", ukoliko želite saznati više o kolačićima, pogledajte <a href="/politika-privatnosti">Politika privatnosti</a>.</p>\
+		<p>Ova stranica koristi kolačiće u svrhu pružanja boljeg korisničkog iskustva. Ukoliko ste suglasni s tim, kliknite na "Slažem se", ukoliko želite saznati više, pogledajte <a href="https://en.wikipedia.org/wiki/HTTP_cookie" target="_blank">Cookies</a>.</p>\
 		<button class="button black">Slažem se</button>\
 		</div>\
 		</div>';
