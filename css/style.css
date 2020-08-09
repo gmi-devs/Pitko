@@ -190,6 +190,17 @@ iframe {
 .wp-block-embed {
   margin: 0; }
 
+.pitko-content ul {
+  list-style: disc outside none;
+  padding-left: 25px;
+  margin-bottom: 4%;
+  line-height: 1.4; }
+  .pitko-content ul li {
+    margin-bottom: 10px; }
+  @media screen and (min-width: 1300px) {
+    .pitko-content ul {
+      margin-bottom: 30px; } }
+
 .hamb {
   cursor: pointer;
   padding: 15px; }
@@ -1155,11 +1166,25 @@ section {
       .blog-archive .post:nth-child(3n+1) {
         clear: left; }
       .blog-archive .post .img-container {
+        position: relative;
         margin-bottom: 20px; }
+        .blog-archive .post .img-container:before {
+          display: block;
+          content: "";
+          width: 100%;
+          padding-top: 70.4128440367%; }
         .blog-archive .post .img-container img {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: auto;
+          height: auto;
+          min-width: 100%;
+          min-height: 100%;
           transition: .5s transform; }
         .blog-archive .post .img-container:hover img {
-          transform: scale(1.2); }
+          transform: translate(-50%, -50%) scale(1.2); }
       .blog-archive .post .date {
         margin-bottom: 10px; } }
   @media screen and (min-width: 1300px) {
